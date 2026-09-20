@@ -5,8 +5,8 @@
 # Site
 title: Tw-isly's Blog
 subtitle: ''
-description: ''
-keywords:
+description: 记录学习与生活
+keywords: Tw-isly, 博客, Hexo
 author: Tw-isly
 language: zh-CN
 timezone: ''
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: matery
+theme: redefine
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
