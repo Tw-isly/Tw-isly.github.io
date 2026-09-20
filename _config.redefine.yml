@@ -29,7 +29,7 @@ defaults:
   # Site logo
   logo: /images/logo.png
   # Site avatar
-  avatar: /images/avatar.jpg
+  avatar: /images/avatar-cat.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -99,7 +99,7 @@ global:
   # Whether to enable open graph
   open_graph:
     enable: true
-    image: /images/avatar.jpg  # default og:image
+    image: /images/avatar-cat.jpg  # default og:image
     description: Tw-isly's Blog
   # Google Analytics
   google_analytics:
