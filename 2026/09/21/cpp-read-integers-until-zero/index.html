@@ -94,7 +94,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tw-isly.github.io/images/avatar-cat.jpg">
 <meta property="article:published_time" content="2026-09-21T04:48:08.000Z">
-<meta property="article:modified_time" content="2026-09-21T04:53:57.969Z">
+<meta property="article:modified_time" content="2026-09-21T05:00:52.560Z">
 <meta property="article:author" content="Tw-isly">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="循环">
@@ -531,8 +531,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-09-21 12:53:57</span>
-            <span class="mobile">2026-09-21 12:53:57</span>
+            <span class="desktop">2026-09-21 13:52</span>
+            <span class="mobile">2026-09-21 13:52</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -574,7 +574,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>315 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>107 字</span>
         </span>
     
     
@@ -598,26 +598,14 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<p>今天遇到的输入格式是：</p>
-<blockquote>
-<p>一行内输入一串整数，以 <code>0</code> 结束，整数之间用空格分隔。</p>
-</blockquote>
-<p>其中 <code>0</code> 是结束标志，不属于需要处理的数据。下面是三种常见写法。</p>
-<h2 id="方法一：在-while-条件中读入"><a href="#方法一：在-while-条件中读入" class="headerlink" title="方法一：在 while 条件中读入"></a>方法一：在 while 条件中读入</h2><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; x &amp;&amp; x != <span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 处理 x</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+			<p>输入一串整数，以 <code>0</code> 结束（<code>0</code> 不参与处理）。</p>
+<h3 id="1-while-条件中读入（推荐）"><a href="#1-while-条件中读入（推荐）" class="headerlink" title="1. while 条件中读入（推荐）"></a>1. while 条件中读入（推荐）</h3><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="keyword">while</span> (cin &gt;&gt; x &amp;&amp; x != <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// 处理 x</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>程序先读入 <code>x</code>，再判断它是否不等于 <code>0</code>。这种写法简洁，还能在输入失败时结束循环，最为推荐。</p>
-<h2 id="方法二：使用-while-true-和-break"><a href="#方法二：使用-while-true-和-break" class="headerlink" title="方法二：使用 while (true) 和 break"></a>方法二：使用 while (true) 和 break</h2><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (!(cin &gt;&gt; x) || x == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 处理 x</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="2-while-break"><a href="#2-while-break" class="headerlink" title="2. while + break"></a>2. while + break</h3><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(cin &gt;&gt; x) || x == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">// 处理 x</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>每轮先输入，再判断是否退出。步骤清楚，也便于以后添加更多结束条件。</p>
-<h2 id="方法三：使用-do…while"><a href="#方法三：使用-do…while" class="headerlink" title="方法三：使用 do…while"></a>方法三：使用 do…while</h2><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">&#123;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (x != <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 处理 x</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (x != <span class="number">0</span>);</span><br></pre></td></tr></table></figure></div>
+<h3 id="3-do…while"><a href="#3-do…while" class="headerlink" title="3. do…while"></a>3. do…while</h3><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    cin &gt;&gt; x;</span><br><span class="line">    <span class="keyword">if</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 处理 x</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">while</span> (x != <span class="number">0</span>);</span><br></pre></td></tr></table></figure></div>
 
-<p><code>do...while</code> 会先执行循环体，再判断条件，因此至少会读取一次。循环体中需要先排除 <code>0</code>，写法稍显重复。</p>
-<h2 id="三种写法如何选择"><a href="#三种写法如何选择" class="headerlink" title="三种写法如何选择"></a>三种写法如何选择</h2><ul>
-<li>想要简洁：使用方法一。</li>
-<li>想让步骤更直观：使用方法二。</li>
-<li>需要循环体至少执行一次：使用方法三。</li>
-</ul>
-<p>这道题的核心逻辑就是：<strong>读入一个数，遇到 <code>0</code> 就结束，否则处理它。</strong></p>
+<p>选择：一般用 1；退出条件复杂时用 2；必须先执行一次时用 3。</p>
 
 		</div>
 
@@ -632,7 +620,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2026-09-21 12:53:57
+                    :</strong> 2026-09-21 13:00:52
             </li>
         
         <li>
@@ -699,7 +687,7 @@
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
 		<div class="page-title">C++ 中读取以 0 结束的一串整数：三种 while 写法</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%9C%A8-while-%E6%9D%A1%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%85%A5"><span class="nav-text">方法一：在 while 条件中读入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8-while-true-%E5%92%8C-break"><span class="nav-text">方法二：使用 while (true) 和 break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9A%E4%BD%BF%E7%94%A8-do%E2%80%A6while"><span class="nav-text">方法三：使用 do…while</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%86%99%E6%B3%95%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9"><span class="nav-text">三种写法如何选择</span></a></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-while-%E6%9D%A1%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%85%A5%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89"><span class="nav-text">1. while 条件中读入（推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-while-break"><span class="nav-text">2. while + break</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-do%E2%80%A6while"><span class="nav-text">3. do…while</span></a></li></ol>
 
 	</div>
 </div>
@@ -731,7 +719,7 @@
                     </span>
                     
                         <span>
-                            共 414 字
+                            共 206 字
                         </span>
                     
                 </p>

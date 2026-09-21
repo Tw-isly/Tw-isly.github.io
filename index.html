@@ -703,14 +703,10 @@
                     <div class="home-article-content markdown-body">
                         
                             
-                            今天遇到的输入格式是：
+                            输入一串整数，以 0 结束（0 不参与处理）。
+1. while 条件中读入（推荐）1234int x;while (cin &gt;&gt; x &amp;&amp; x != 0) &#123;    // 处理 x&#125;
 
-一行内输入一串整数，以 0 结束，整数之间用空格分隔。
-
-其中 0 是结束标志，不属于需要处理的数据。下面是三种常见写法。
-方法一：在 while 条件中读入123456int x;while (cin &gt;&gt; x &amp;&amp; x != 0)&#123;    // 处理 x&#125;
-
-程序先读入 x，再判断它是否不等于 0。这种写法简洁，还...
+2. while + break12345int x;while (true) &#123;    if (!(cin &gt;&gt; x) || x ==...
                         
                     </div>
 
@@ -884,7 +880,7 @@ Qu...
                     </span>
                     
                         <span>
-                            共 414 字
+                            共 206 字
                         </span>
                     
                 </p>
