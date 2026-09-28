@@ -1,6 +1,16 @@
 export function initHBE() {
   const cryptoObj = window.crypto || window.msCrypto;
-  const storage = window.localStorage;
+  const storage = {
+    getItem(name) {
+      try {
+        window.localStorage.removeItem(name);
+      } catch (_) {
+        // Private browsing can make localStorage unavailable.
+      }
+      return null;
+    },
+    setItem() {},
+  };
 
   const storageName = "hexo-blog-encrypt:#" + window.location.pathname;
   const keySalt = textToArray("too young too simple");
