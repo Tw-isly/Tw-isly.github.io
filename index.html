@@ -593,7 +593,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -632,7 +632,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">6</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -685,6 +685,80 @@
 			<div class="main-content">
 				<div class="home-content-container">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/09/28/cpp-memcpy-copies-bytes/">
+                            C++ 速记：memcpy 的长度单位是字节
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            memcpy 的第三个参数是字节数，不是元素个数。
+1memcpy(b, a, 10);  // 错：只复制 10 bytes
+
+常见环境中 int 占 4 bytes，因此这不等于复制 10 个 int。出现 1 2 3 0 0... 与内存布局及小端存储有关，不应依赖。
+1memcpy(b, a, sizeof(a));  // 复制整个数组
+
+记忆：memcpy(目标, 来源, 字节数...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Sep 28 2026 00:00:00 GMT+0800">
+                
+                    2026-09-28
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/">编程学习</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/C/">C++</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/09/28/cpp-memcpy-copies-bytes/">阅读全文<span class="seo-reader-text">C++ 速记：memcpy 的长度单位是字节</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
         
             <li class="home-article-item">
 
@@ -1028,11 +1102,11 @@ Qu...
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 5 篇文章
+                        共撰写了 6 篇文章
                     </span>
                     
                         <span>
-                            共 356 字
+                            共 447 字
                         </span>
                     
                 </p>
